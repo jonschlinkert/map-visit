@@ -1,0 +1,45 @@
+{
+  "name": "map-visit",
+  "description": "Map `visit` over an array of objects.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jonschlinkert/map-visit",
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "repository": "jonschlinkert/map-visit",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/map-visit/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "object-visit": "^0.1.0"
+  },
+  "devDependencies": {
+    "lodash": "^3.10.0",
+    "mocha": "*",
+    "should": "*"
+  },
+  "keywords": [
+    "array",
+    "arrays",
+    "function",
+    "helper",
+    "invoke",
+    "key",
+    "map",
+    "method",
+    "object",
+    "objects",
+    "value",
+    "visit",
+    "visitor"
+  ]
+}
