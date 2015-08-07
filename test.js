@@ -31,4 +31,20 @@ describe('visit', function () {
       d: { e: 'f' }
     });
   });
+
+  it('should call visit on every value in the given object:', function () {
+    ctx.set('a', 'a');
+    ctx.set(['x', 'y']);
+    ctx.set([{b: 'b'}, {c: 'c'}]);
+    ctx.set({d: {e: 'f'}});
+
+    ctx.data.should.eql( {
+      a: 'a',
+      b: 'b',
+      c: 'c',
+      d: { e: 'f' },
+      x: undefined,
+      y: undefined
+    });
+  });
 });
