@@ -1,6 +1,6 @@
 'use strict';
 
-var visit = require('object-visit');
+var utils = require('./utils');
 
 /**
  * Map `visit` over an array of objects.
@@ -11,11 +11,15 @@ var visit = require('object-visit');
  */
 
 module.exports = function mapVisit(collection, method, arr) {
+  if (!Array.isArray(arr)) {
+    throw new TypeError('expected an array');
+  }
+
   arr.forEach(function (val) {
     if (typeof val === 'string') {
       collection[method](val);
     } else {
-      visit(collection, method, val);
+      utils.visit(collection, method, val);
     }
   });
 };
