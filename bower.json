@@ -1,0 +1,37 @@
+{
+  "name": "map-visit",
+  "description": "Map `visit` over an array of objects.",
+  "repository": "jonschlinkert/map-visit",
+  "license": "MIT",
+  "homepage": "https://github.com/jonschlinkert/map-visit",
+  "authors": [
+    "Jon Schlinkert (https://github.com/jonschlinkert)"
+  ],
+  "main": [
+    "index.js"
+  ],
+  "dependencies": {
+    "lazy-cache": "^0.2.3",
+    "object-visit": "^0.1.0"
+  },
+  "devDependencies": {
+    "lodash": "^3.10.0",
+    "mocha": "*",
+    "should": "*"
+  },
+  "keywords": [
+    "array",
+    "arrays",
+    "function",
+    "helper",
+    "invoke",
+    "key",
+    "map",
+    "method",
+    "object",
+    "objects",
+    "value",
+    "visit",
+    "visitor"
+  ]
+}
