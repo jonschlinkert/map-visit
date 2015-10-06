@@ -1,4 +1,4 @@
-# map-visit [![NPM version](https://badge.fury.io/js/map-visit.svg)](http://badge.fury.io/js/map-visit)
+# map-visit [![NPM version](https://badge.fury.io/js/map-visit.svg)](http://badge.fury.io/js/map-visit)  [![Build Status](https://travis-ci.org/jonschlinkert/map-visit.svg)](https://travis-ci.org/jonschlinkert/map-visit)
 
 > Map `visit` over an array of objects.
 
