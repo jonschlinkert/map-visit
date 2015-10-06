@@ -20,6 +20,18 @@ var ctx = {
 };
 
 describe('visit', function () {
+  it('should throw an error when value is not an array.', function (done) {
+    try {
+      mapVisit({}, 'foo', 'bar');
+      done(new Error('expected an error'));
+    } catch(err) {
+      assert(err);
+      assert(err.message);
+      assert(err.message === 'expected an array');
+      done();
+    }
+  });
+
   it('should call visit on every value in the given object:', function () {
     ctx.set('a', 'a');
     ctx.set([{b: 'b'}, {c: 'c'}]);
