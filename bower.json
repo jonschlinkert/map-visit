@@ -11,11 +11,10 @@
     "index.js"
   ],
   "dependencies": {
-    "lazy-cache": "^0.2.3",
-    "object-visit": "^0.1.0"
+    "lazy-cache": "^0.2.4",
+    "object-visit": "^0.3.1"
   },
   "devDependencies": {
-    "lodash": "^3.10.0",
     "mocha": "*",
     "should": "*"
   },
