@@ -1,8 +1,11 @@
 'use strict';
 
 var utils = require('lazy-cache')(require);
-require = utils; // fool browserify
+var fn = require;
+
+require = utils; // trick browserify
 require('object-visit', 'visit');
+require = fn;
 
 /**
  * Expose utils

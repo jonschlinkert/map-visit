@@ -51,5 +51,10 @@
         "object-visit"
       ]
     }
+  },
+  "verb": {
+    "related": {
+      "list": []
+    }
   }
 }
