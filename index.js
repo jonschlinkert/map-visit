@@ -15,7 +15,7 @@ module.exports = function mapVisit(collection, method, arr) {
     throw new TypeError('expected an array');
   }
 
-  arr.forEach(function (val) {
+  arr.forEach(function(val) {
     if (typeof val === 'string') {
       collection[method](val);
     } else {

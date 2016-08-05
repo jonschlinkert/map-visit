@@ -6,7 +6,7 @@ var _ = require('lodash');
 
 var obj = {
   data: {},
-  set: function (key, value) {
+  set: function(key, value) {
     if (Array.isArray(key)) {
       _.extend.apply(_, [obj.data].concat(key));
     } else if (typeof key === 'object') {
@@ -24,7 +24,6 @@ obj.set({d: {e: 'f'}});
 console.log(obj.data);
 //=> {a: 'a', b: 'b', c: 'c', d: { e: 'f' }}
 
-
 /**
  * Example using `mapVisit`
  */
@@ -32,9 +31,9 @@ console.log(obj.data);
 var mapVisit = require('./');
 var visit = require('object-visit');
 
-var obj = {
+obj = {
   data: {},
-  set: function (key, value) {
+  set: function(key, value) {
     if (Array.isArray(key)) {
       mapVisit(obj, 'set', key);
     } else if (typeof key === 'object') {
