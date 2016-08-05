@@ -25,6 +25,7 @@
     "object-visit": "^0.3.4"
   },
   "devDependencies": {
+    "gulp-format-md": "^0.1.10",
     "lodash": "^4.14.1",
     "mocha": "^3.0.1",
     "should": "^10.0.0"
@@ -50,6 +51,21 @@
         "collection-visit",
         "object-visit"
       ]
-    }
+    },
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "lint": {
+      "reflinks": true
+    },
+    "reflinks": [
+      "verb",
+      "verb-generate-readme"
+    ]
   }
 }
