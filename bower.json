@@ -11,12 +11,14 @@
     "index.js"
   ],
   "dependencies": {
-    "lazy-cache": "^0.2.4",
-    "object-visit": "^0.3.1"
+    "object-visit": "^1.0.0"
   },
   "devDependencies": {
-    "mocha": "*",
-    "should": "*"
+    "clone-deep": "^0.2.4",
+    "extend-shallow": "^2.0.1",
+    "gulp-format-md": "^0.1.12",
+    "lodash": "^4.17.4",
+    "mocha": "^3.2.0"
   },
   "keywords": [
     "array",
@@ -32,5 +34,26 @@
     "value",
     "visit",
     "visitor"
+  ],
+  "version": "0.1.5",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/map-visit/issues"
+  },
+  "files": [
+    "index.js"
+  ],
+  "ignore": [
+    "actual",
+    "bower_components",
+    "fixtures",
+    "node_modules",
+    "temp",
+    "test",
+    "test.js",
+    "tmp"
+  ],
+  "contributors": [
+    "Brian Woodward <brian.woodward@gmail.com> (https://twitter.com/doowb)",
+    "Jon Schlinkert <jon.schlinkert@sellside.com> (http://twitter.com/jonschlinkert)"
   ]
 }
