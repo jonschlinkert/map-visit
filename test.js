@@ -1,42 +1,42 @@
 'use strict';
 
 require('mocha');
-require('should');
+var clone = require('clone-deep');
 var assert = require('assert');
+var extend = require('extend-shallow');
 var visit = require('object-visit');
 var mapVisit = require('./');
+var ctx;
 
-var ctx = {
+var fixture = {
   data: {},
+  options: {},
   set: function(key, value) {
-    if (Array.isArray(key)) {
-      mapVisit(ctx, 'set', key);
-    } else if (typeof key === 'object') {
-      visit(ctx, 'set', key);
+    if (typeof key !== 'string') {
+      if (value) extend(this.options, value);
+      mapVisit(this, 'set', key, value);
     } else {
-      ctx.data[key] = value;
+      this.data[key] = value;
     }
   }
 };
 
 describe('visit', function() {
-  it('should throw an error when value is not an array.', function(done) {
-    try {
-      mapVisit({}, 'foo', 'bar');
-      done(new Error('expected an error'));
-    } catch (err) {
-      assert(err);
-      assert(err.message);
-      assert(err.message === 'expected an array');
-      done();
-    }
+  beforeEach(function() {
+    ctx = clone(fixture);
   });
 
-  it('should call visit on every value in the given object:', function() {
+  it('should throw an error when value is not an array', function() {
+    assert.throws(function() {
+      mapVisit({}, 'foo', 'bar');
+    });
+  });
+
+  it('should call visit on every value in the given object', function() {
     ctx.set('a', 'a');
     ctx.set([{b: 'b'}, {c: 'c'}]);
     ctx.set({d: {e: 'f'}});
-    ctx.data.should.eql({
+    assert.deepEqual(ctx.data, {
       a: 'a',
       b: 'b',
       c: 'c',
@@ -44,13 +44,13 @@ describe('visit', function() {
     });
   });
 
-  it('should call visit on every value in the given object:', function() {
+  it('should call visit on every element of any array', function() {
     ctx.set('a', 'a');
     ctx.set(['x', 'y']);
     ctx.set([{b: 'b'}, {c: 'c'}]);
     ctx.set({d: {e: 'f'}});
 
-    ctx.data.should.eql({
+    assert.deepEqual(ctx.data, {
       a: 'a',
       b: 'b',
       c: 'c',
@@ -58,5 +58,19 @@ describe('visit', function() {
       x: undefined,
       y: undefined
     });
+  });
+
+  it('should set the second arg on every element', function() {
+    ctx.set(['foo', 'bar'], function() {});
+
+    assert.equal(typeof ctx.data.foo, 'function');
+    assert.equal(typeof ctx.data.bar, 'function');
+  });
+
+  it('should set the second arg on every object', function() {
+    ctx.set({a: 'aaa', b: 'bbb'}, {cwd: process.cwd()});
+
+    assert.equal(ctx.options.cwd, process.cwd());
+    assert.equal(ctx.options.cwd, process.cwd());
   });
 });
