@@ -1,7 +1,7 @@
 {
   "name": "map-visit",
   "description": "Map `visit` over an array of objects.",
-  "version": "0.1.5",
+  "version": "1.0.0",
   "homepage": "https://github.com/jonschlinkert/map-visit",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "contributors": [
