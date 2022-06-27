@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "lazy-cache": "^2.0.1",
-    "object-visit": "^0.3.4"
+    "object-visit": "^1.0.1"
   },
   "devDependencies": {
     "gulp-format-md": "^0.1.10",
