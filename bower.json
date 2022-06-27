@@ -11,8 +11,7 @@
     "index.js"
   ],
   "dependencies": {
-    "lazy-cache": "^0.2.4",
-    "object-visit": "^0.3.1"
+    "object-visit": "^1.0.1"
   },
   "devDependencies": {
     "mocha": "*",
